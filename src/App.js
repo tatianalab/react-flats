@@ -18,21 +18,22 @@ class App extends React.Component {
     }
   }
 
+  pickFlat = (flat) => {
+    console.log(flat);
+  }
+
 
   render(){
 
-    const flatItems = this.state.allFlats.map(item => <Flat key={item.id} item={item} />)
+    const flatItems = this.state.allFlats.map(flat => <Flat key={flat.id} flat={flat} pickFlat={this.pickFlat} />)
 
     return (
       <>
       <div className="flat-list">
       {flatItems}
       </div>
-
       <div className="map-container">
       <Map />
-
-
       </div>
       </>
       )
