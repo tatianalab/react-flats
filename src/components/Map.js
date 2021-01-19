@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
-import ReactMapGL from 'react-map-gl'
+import ReactMapGL, {Marker} from 'react-map-gl'
+import flats from '../data/flatsdata.js'
 
 function Map (){
   const REACT_APP_MAPBOX_ACCESS_TOKEN="pk.eyJ1IjoidGF0aWFsYWIiLCJhIjoiY2toNTFtemxjMGNjbDJzcXZyOHlqMDFyZCJ9.wahnCxzAg2kn5MRNnp3AwQ"
@@ -21,7 +22,12 @@ function Map (){
     setViewport(viewport);
 }}
      >
-      Markers
+     {flats.map((flat) => (
+     <Marker className="marker" key={flat.id} latitude={flat.lat} longitude={flat.lng}>
+     {flat.price}
+     </Marker>
+      ))}
+
     </ReactMapGL>
 
     )

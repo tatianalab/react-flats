@@ -1,11 +1,13 @@
 import React from 'react'
 import './App.scss';
-import ReactMapGL from 'react-map-gl'
+// import ReactMapGL from 'react-map-gl'
+
 
 
 import Flat from './components/Flat'
 import flats from './data/flatsdata.js'
 import Map from './components/Map'
+
 
 
 class App extends React.Component {
@@ -29,6 +31,8 @@ class App extends React.Component {
 
       <div className="map-container">
       <Map />
+
+
       </div>
       </>
       )
