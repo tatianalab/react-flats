@@ -38,6 +38,13 @@ body {
   /*background:gray;*/
 }
 
+.marker {
+  height: 20px;
+  width: 20px;
+  background-color: red;
+  border-radius: 50%;
+}
+
 
 // _cards.scss
 .card {
