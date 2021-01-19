@@ -2,9 +2,9 @@ import React, {useState} from 'react'
 import ReactMapGL, {Marker, Popup} from 'react-map-gl'
 import flats from '../data/flatsdata.js'
 
-function Map (){
+function Map (props){
   const REACT_APP_MAPBOX_ACCESS_TOKEN="pk.eyJ1IjoidGF0aWFsYWIiLCJhIjoiY2toNTFtemxjMGNjbDJzcXZyOHlqMDFyZCJ9.wahnCxzAg2kn5MRNnp3AwQ"
-  const [viewport, setViewport] = useState ({
+  let [viewport, setViewport] = useState ({
     latitude: 48.8566,
     longitude: 2.3522,
     width:"100%",
@@ -13,7 +13,12 @@ function Map (){
   });
   const [selectedFlat, setSelectedFlat] = useState(null);
 
+  const chosenFlat = () => {
+    console.log(this.props.pickedFlat.name)
+  }
+
   return (
+
     <ReactMapGL {...viewport}
     mapboxApiAccessToken = {REACT_APP_MAPBOX_ACCESS_TOKEN}
     mapStyle = "mapbox://styles/tatialab/ckk43xehh3b5k17mjbaipfsis"

@@ -2,6 +2,7 @@ import React from 'react'
 
 class Flat extends React.Component {
   handleClick = () => {
+
     this.props.pickFlat(this.props.flat)
   }
 

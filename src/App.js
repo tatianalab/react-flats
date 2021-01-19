@@ -14,12 +14,16 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      allFlats: flats
+      allFlats: flats,
+      pickedFlat: null
     }
   }
 
   pickFlat = (flat) => {
-    console.log(flat);
+    // console.log(flat)
+    this.setState({
+      pickedFlat: flat
+    })
   }
 
 
@@ -33,7 +37,7 @@ class App extends React.Component {
       {flatItems}
       </div>
       <div className="map-container">
-      <Map />
+      <Map pickFlat={this.pickFlat} />
       </div>
       </>
       )
